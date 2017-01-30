@@ -20,3 +20,7 @@ Route::auth();
 Route::get('/dashboard', function(){
 	return view('templates.dashboard');
 });
+
+Route::get('/account', function(){
+	return view('templates.account');
+});

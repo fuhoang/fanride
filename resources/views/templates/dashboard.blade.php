@@ -3,9 +3,9 @@
 @section('content')
 
 
-	<div class="content-section-dashboard">
+	<div class="content-section">
 		<div class="container">
-		<p>Welcome to dashboard</p>
+			<h1>Your Dashboard</h1>
 		</div>
 	</div>
 
