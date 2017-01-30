@@ -1,7 +1,39 @@
 @extends('master')
 
 @section('content')
-<!-- Page Content -->
+
+        <!-- Header -->
+        <a name="about"></a>
+        <div class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="intro-message">
+                            <h1>Fan Ride</h1>
+                            <h3>Find your next ride to your next match day!</h3>
+                            <hr class="intro-divider">
+
+                            <form class="form-inline">
+                              <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="text" class="form-control" id="leaving" placeholder="Leaving from...">
+                              </div>
+                              <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="text" class="form-control" id="going-to" placeholder="Going to...">
+                              </div>
+                              <button type="submit" class="btn btn-primary">Find a ride</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.intro-header -->
+
+
+        <!-- Page Content -->
         <a  name="services"></a>
         <div class="content-section-a">
             <div class="container">

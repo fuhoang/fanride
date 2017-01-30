@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"app.js","sourcesContent":["$(function(){\n\n   // jQuery methods go here...\n   alert('hello jquery');\n\n}); "]}
+{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","file":"app.js","sourcesContent":["$(function(){\n\n   // jQuery methods go here...\n  \n\n}); "]}
