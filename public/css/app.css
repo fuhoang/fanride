@@ -5851,6 +5851,9 @@ h6 {
   ul.banner-social-buttons > li:last-child {
     margin-bottom: 0; } }
 
+.content-section-dashboard {
+  padding: 80px 0; }
+
 .content-section-login {
   padding: 80px 0; }
 

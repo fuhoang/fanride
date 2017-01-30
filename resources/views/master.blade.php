@@ -27,25 +27,47 @@
                     </button>
                     <a class="navbar-brand topnav" href="/">Fan Ride</a>
                 </div>
+                
+
+
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="{{ url('/login') }}">Login</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/register') }}">Register</a>
 
+                    @if(Auth::check())
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                        <li><a href="{{ url('/account') }}">Account</a></li>
+                        <li><a href="{{ url('/help') }}">Help</a></li>
+                    </ul>
+                    @endif
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
                         </li>
+                    @endif
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
         </nav>
 
-       
-
+      
         @yield('content')
+        
 
         <!-- Footer -->
         <footer>
