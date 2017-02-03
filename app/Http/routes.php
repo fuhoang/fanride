@@ -28,3 +28,7 @@ Route::get('/account', function(){
 Route::get('/offeraride', function(){
 	return view('templates.offeraride');
 });
+
+Route::get('/findaride', function(){
+	return view('templates.findaride');
+});
