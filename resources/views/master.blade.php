@@ -27,9 +27,6 @@
                     </button>
                     <a class="navbar-brand topnav" href="/">Fan Ride</a>
                 </div>
-                
-
-
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -37,6 +34,7 @@
                     @if(Auth::check())
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                        <li><a href="{{ url('/offeraride') }}">Offer a ride</a></li>
                         <li><a href="{{ url('/account') }}">Account</a></li>
                         <li><a href="{{ url('/help') }}">Help</a></li>
                     </ul>

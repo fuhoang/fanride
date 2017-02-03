@@ -24,3 +24,7 @@ Route::get('/dashboard', function(){
 Route::get('/account', function(){
 	return view('templates.account');
 });
+
+Route::get('/offeraride', function(){
+	return view('templates.offeraride');
+});
