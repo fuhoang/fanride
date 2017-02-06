@@ -25,9 +25,7 @@ Route::get('/account', function(){
 	return view('templates.account');
 });
 
-Route::get('/offeraride', function(){
-	return view('templates.offeraride');
-});
+Route::get('/offeraride', 'TravelController@index');
 
 Route::get('/findaride', function(){
 	return view('templates.findaride');
