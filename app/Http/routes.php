@@ -21,10 +21,7 @@ Route::get('/dashboard', function(){
 	return view('templates.dashboard');
 });
 
-Route::get('/account', function(){
-	return view('templates.account');
-});
-
+Route::get('/account', 'AccountController@index');
 Route::get('/offeraride', 'TravelController@index');
 
 Route::get('/findaride', function(){

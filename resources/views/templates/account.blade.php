@@ -13,52 +13,52 @@
 			  <p>To change the current user password, enter the new password in both fields.</p>
 			  
 			  <div class="form-group">
-			    <input type="password" name="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your new password">
+			    <input type="password" name="new_password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your new password">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="password" name="" class="form-control" id="exampleInputPassword1" placeholder="Confirm the password">
+			    <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword1" placeholder="Confirm the password">
 			  </div>
 
 			  <hr>
 		
 			  <label for="exampleInputPassword1">Name</label>			  
 			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First name">
+			    <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First name">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputPassword1" placeholder="Last name">
+			    <input type="text" name="last_name" class="form-control" id="exampleInputPassword1" placeholder="Last name">
 			  </div>
 
 			  <hr>
 
 			  <label for="exampleInputPassword1">Contact</label>			  
 			  <div class="form-group">
-			    <input type="email" name="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+			    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputPassword1" placeholder="Mobile number">
+			    <input type="text" name="mobile_number" class="form-control" id="exampleInputPassword1" placeholder="Mobile number">
 			  </div>
 
 			  <hr>
 
-			  <label for="exampleInputPassword1">Address</label>			  
+			  <label for="address">Address</label>			  
 			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Street">
+			    <input type="text" name="street" class="form-control" id="exampleInputStreet" aria-describedby="emailHelp" placeholder="Street">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputPassword1" placeholder="town">
+			    <input type="text" name="town" class="form-control" id="exampleInputTown" placeholder="town">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="County">
+			    <input type="text" name="country" class="form-control" id="exampleInputCounty" placeholder="County">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputPassword1" placeholder="Postcode">
+			    <input type="text" name="pasotcode" class="form-control" id="exampleInputPostcode" placeholder="Postcode">
 			  </div>
 
 			  <hr>
