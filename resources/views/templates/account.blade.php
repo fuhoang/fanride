@@ -6,17 +6,40 @@
 		<div class="container">
 			<h1>Your Account</h1>
 
+
+
+
+			@if($errors->has())
+			   @foreach ($errors->all() as $error)
+			      <div>{{ $error }}</div>
+			  @endforeach
+			@endif
+
+
+
 			<form method="post" action="{{ url('/account/' . Auth::user()->id ) }}">
 			  
 			  <label for="changePassword">Change password</label>
 			  <p>To change the current user password, enter the new password in both fields.</p>
 			  
-			  <div class="form-group">
-			    <input type="password" name="new_password" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your new password">
+
+			  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+
+				    <input type="password" name="password" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your new password">
+				    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
 			  </div>
 
-			  <div class="form-group">
-			    <input type="password" name="confirm_password" class="form-control" id="exampleInputPassword1" placeholder="Confirm the password">
+			  <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+			    	<input type="password" name="password_confirmation" class="form-control" id="exampleInputPassword1" placeholder="Confirm the password">
+			  		@if ($errors->has('password_confirmation'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                        </span>
+                    @endif
 			  </div>
 
 			  <hr>
@@ -45,19 +68,19 @@
 
 			  <label for="address">Address</label>			  
 			  <div class="form-group">
-			    <input type="text" name="street" class="form-control" id="exampleInputStreet" aria-describedby="emailHelp" placeholder="Street">
+			    <input type="text" name="street" class="form-control" id="exampleInputStreet" aria-describedby="emailHelp" value="{{ $user->street }}" placeholder="Street">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" name="town" class="form-control" id="exampleInputTown" placeholder="town">
+			    <input type="text" name="town" class="form-control" id="exampleInputTown" value="{{ $user->town }}" placeholder="town">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" name="country" class="form-control" id="exampleInputCounty" placeholder="County">
+			    <input type="text" name="county" class="form-control" id="exampleInputCounty" value="{{ $user->county }}" placeholder="County">
 			  </div>
 
 			  <div class="form-group">
-			    <input type="text" name="postcode" class="form-control" id="exampleInputPostcode" placeholder="Postcode">
+			    <input type="text" name="postcode" class="form-control" id="exampleInputPostcode" value="{{ $user->postcode }}" placeholder="Postcode">
 			  </div>
 
 			  <hr>

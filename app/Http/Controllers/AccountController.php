@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use Response;
 use App\Http\Requests;
@@ -88,13 +89,30 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo "hello";
-        echo $id;
-        echo $request->first_name;
-        echo $request->mobile_number;
 
-        User::where("id", $id)->update(['mobile_number' => $request->mobile_number]);
-        //
+        $this->validate($request, [
+            'password'           => 'required|min:4',
+            'password_confirmation'   => 'required|same:password',
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+        ]);
+
+        $hashedPassword = Hash::make($request->password_confirmation);
+
+        if (Hash::check($request->password_confirmation, $hashedPassword)) {        
+            User::where("id", $id)->update(
+            [
+                'password'      => $hashedPassword,
+                'first_name'    => $request->first_name,
+                'last_name'     => $request->last_name,
+                'email'         => $request->email,
+                'mobile_number' => $request->mobile_number,
+                'street'        => $request->street,
+                'town'          => $request->town,
+                'county'        => $request->county,
+                'postcode'      => $request->postcode
+            ]);
+        }
     }
 
     /**
