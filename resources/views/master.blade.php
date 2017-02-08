@@ -32,11 +32,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                     @if(Auth::check())
+
+
                     <ul class="nav navbar-nav navbar-left">
                         <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ url('/findaride') }}">Find a ride</a></li>
                         <li><a href="{{ url('/offeraride') }}">Offer a ride</a></li>
-                        <li><a href="{{ url('/account') }}">Account</a></li>
+                        <li><a href="{{ url('/account/' . Auth::user()->id . '/edit') }}">Account</a></li>
                         <li><a href="{{ url('/help') }}">Help</a></li>
                     </ul>
                     @endif
@@ -50,7 +52,7 @@
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">

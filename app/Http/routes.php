@@ -21,6 +21,10 @@ Route::get('/dashboard', function(){
 	return view('templates.dashboard');
 });
 
+
+Route::resource('account', 'AccountController');
+
+
 Route::get('/account', 'AccountController@index');
 Route::get('/offeraride', 'TravelController@index');
 
