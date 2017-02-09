@@ -23,8 +23,6 @@ class AccountController extends Controller
 
         echo "hello";
         //print_r($input);
-
-
         $users = User::all();
         return view('templates.account', ['users' => $users]);
     }
@@ -113,6 +111,8 @@ class AccountController extends Controller
                 'postcode'      => $request->postcode
             ]);
         }
+
+        return redirect()->back()->with('message', 'Your details has been saved');;
     }
 
     /**

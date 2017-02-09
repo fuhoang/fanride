@@ -6,25 +6,19 @@
 		<div class="container">
 			<h1>Your Account</h1>
 
-
-
-
-			@if($errors->has())
-			   @foreach ($errors->all() as $error)
-			      <div>{{ $error }}</div>
-			  @endforeach
-			@endif
-
-
+			@if(Session::has('message'))
+        		<div class="alert alert-info">
+            		<a class="close" data-dismiss="alert">×</a>
+            		{!!Session::get('message')!!}
+        		</div>
+    		@endif
 
 			<form method="post" action="{{ url('/account/' . Auth::user()->id ) }}">
 			  
 			  <label for="changePassword">Change password</label>
 			  <p>To change the current user password, enter the new password in both fields.</p>
-			  
-
+		
 			  <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-
 				    <input type="password" name="password" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your new password">
 				    @if ($errors->has('password'))
                         <span class="help-block">
