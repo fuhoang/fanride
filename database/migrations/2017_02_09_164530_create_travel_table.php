@@ -12,12 +12,12 @@ class CreateTravelTable extends Migration
      */
     public function up()
     {
-        Schema::create('travel', function(Blueprint $table) {
+        Schema::create('travels', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('from');
-            $table->string('to');
-            $table->string('departure');
-            $table->string('arrival');
+            $table->string('pickup');
+            $table->string('dropoff');
+            $table->string('travel_date');
+            $table->string('return_date');
             $table->string('round_trip');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateTravelTable extends Migration
      */
     public function down()
     {
-        Schema::drop('travel');
+        Schema::drop('travels');
     }
 }

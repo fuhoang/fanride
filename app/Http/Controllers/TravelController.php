@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Travel;
 
 
 class TravelController extends Controller
@@ -43,7 +44,14 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            
+        //print_r($request->pickup);
+
+        $create = Travel::create($request->all());
+
+        echo $create;
+
+        return Response('lets travel');   
     }
 
     /**

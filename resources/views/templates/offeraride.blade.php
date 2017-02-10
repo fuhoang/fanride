@@ -7,7 +7,7 @@
 		<div class="container">
 			<h1>Offer a ride</h1>
 
-			<form method="post">
+			<form method="post" action="/offeraride">
 			  
 			  <h2>Pick-up and drop-off points</h2>
 
@@ -26,15 +26,16 @@
 			  <h2>Date & Time</h2>
 			  <label for="travelDate">Travel date:</label>			  
 			  <div class="form-group">
-			    <input type="text" name="traveldate" class="form-control" id="exampleInputTravelDate" aria-describedby="emailHelp" placeholder="Travel date">
+			    <input type="text" name="travel_date" class="form-control" id="exampleInputTravelDate" aria-describedby="emailHelp" placeholder="Travel date">
 			  </div>
 			  <label for="returnDate">Return date:</label>
 			  <div class="form-group">
-			    <input type="text" name="returndate" class="form-control" id="exampleInputReturnDate" placeholder="Last name">
+			    <input type="text" name="return_date" class="form-control" id="exampleInputReturnDate" placeholder="Last name">
 			  </div>
 
 			  <hr>
-			  
+
+			  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 			  <button type="submit" class="btn btn-primary">Continue</button>
 			</form>
 

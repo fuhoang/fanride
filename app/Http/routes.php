@@ -23,10 +23,11 @@ Route::get('/dashboard', function(){
 
 
 Route::resource('account', 'AccountController');
+Route::resource('offeraride', 'TravelController');
 
 
 Route::get('/account', 'AccountController@index');
-Route::get('/offeraride', 'TravelController@index');
+//Route::get('/offeraride', 'TravelController@index');
 
 Route::get('/findaride', function(){
 	return view('templates.findaride');
