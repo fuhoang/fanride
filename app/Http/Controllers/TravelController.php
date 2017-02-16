@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Travel;
 
+use Carbon\Carbon;
+
 
 class TravelController extends Controller
 {
@@ -45,11 +47,20 @@ class TravelController extends Controller
     public function store(Request $request)
     {
             
-        //print_r($request->pickup);
+        //print_r($request->);
+        echo $request->travel_date;
+        //dd($request->travel_date);
+        //$dt = Carbon::parse($request->travel_date);
 
-        $create = Travel::create($request->all());
+        $input  = '11/06/1990';
+        $format = 'd/m/Y';
 
-        echo $create;
+        $date = Carbon::createFromFormat($format, $request->travel_date);
+
+        echo $date;
+        //$create = Travel::create($request->all());
+
+        //echo $create;
 
         return Response('lets travel');   
     }
