@@ -25,12 +25,12 @@
 
 			  <h2>Date & Time</h2>
 			  <label for="travelDate">Travel date:</label>			  
-			  <div class="form-group">
-			    <input type="text" name="travel_date" class="form-control" id="exampleInputTravelDate" aria-describedby="emailHelp" placeholder="Travel date">
+			  <div class="form-group date">
+			    <input type="text" name="travel_date" class="form-control datepicker">
 			  </div>
 			  <label for="returnDate">Return date:</label>
 			  <div class="form-group">
-			    <input type="text" name="return_date" class="form-control" id="exampleInputReturnDate" placeholder="Last name">
+			    <input type="text" name="return_date" class="form-control datepicker" id="exampleInputReturnDate" placeholder="">
 			  </div>
 
 			  <hr>

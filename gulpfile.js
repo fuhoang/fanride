@@ -18,5 +18,7 @@ elixir(function(mix) {
   	.copy('node_modules/font-awesome/', 'public/fonts/font-awesome')
   	.copy('node_modules/jquery/dist/jquery.js', 'public/js')
     .copy(bootstrapPath + '/fonts', 'public/fonts')
-    .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js');
+    .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js')
+    .copy('node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', 'public/css')
+    .copy('node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', 'public/js');
 });

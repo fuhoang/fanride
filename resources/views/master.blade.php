@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         
         <link href="{{ asset('/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css">
 
     </head>
@@ -100,6 +101,22 @@
         
         <script type="text/javascript" src="{{ asset('/js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/js/bootstrap-datepicker.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
+
+
+
+        <script type="text/javascript">
+        
+        var date = new Date();
+    
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy',
+            todayHighlight:true,
+            startView:0,
+            startDate:date
+        });
+           
+    </script>
     </body>
 </html>
