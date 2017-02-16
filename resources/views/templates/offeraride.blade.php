@@ -28,10 +28,10 @@
 				  <div class="input-group date">
 				  	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 
-				    <input type="text" name="travel_date" class="form-control datepicker" aria-describedby="sizing-addon1" placeholder="Travel date:">
+				    <input type="text" name="travel_date[date]" class="form-control datepicker" aria-describedby="sizing-addon1" placeholder="Travel date:">
 				  </div>
 
-				  <select class="form-control">
+				  <select class="form-control" name="travel_date[hour]">
 					 <option value="" selected="selected"/>
 					<option value="0">00</option>
 					<option value="1">01</option>
@@ -59,7 +59,7 @@
 					<option value="23">23</option>
 				  </select>
 
-				  <select class="form-control">
+				  <select class="form-control" name="travel_date[min]">
 					  	<option value="" selected="selected"/>
 						<option value="0">00</option>
 						<option value="10">10</option>

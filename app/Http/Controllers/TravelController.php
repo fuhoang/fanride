@@ -47,15 +47,15 @@ class TravelController extends Controller
     public function store(Request $request)
     {
             
-        //print_r($request->);
-        echo $request->travel_date;
+        print_r($request->travel_date);
+        echo $request->travel_date['date'];
         //dd($request->travel_date);
         //$dt = Carbon::parse($request->travel_date);
 
         $input  = '11/06/1990';
-        $format = 'd/m/Y';
+        $format = 'd/m/Y H:i';
 
-        $date = Carbon::createFromFormat($format, $request->travel_date);
+        $date = Carbon::createFromFormat($format, $request->travel_date['date'] .' '.$request->travel_date['hour'].':'.$request->travel_date['min']);
 
         echo $date;
         //$create = Travel::create($request->all());
