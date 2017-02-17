@@ -65,7 +65,7 @@
 
 				  <select class="form-control" name="travel_date[min]">
 					 <option value="" selected="selected"/>
-					 <option value="0">00</option>
+					 <option value="00">00</option>
 					 <option value="10">10</option>
 					 <option value="20">20</option>
 					 <option value="30">30</option>
@@ -111,7 +111,7 @@
 
 				  <select class="form-control" name="return_date[min]">
 					<option value="" selected="selected"/>
-					<option value="0">00</option>
+					<option value="00">00</option>
 					<option value="10">10</option>
 					<option value="20">20</option>
 					<option value="30">30</option>
@@ -136,7 +136,7 @@
 			  <div class="form-group well"> 
 				  <div class="input-group">
 			        <span class="input-group-addon">Number of seats</span>
-			        <select id="lunch" class="selectpicker form-control" data-live-search="true">
+			        <select id="lunch" class="selectpicker form-control" name="number_of_seats">
 			          <option value="0">0</option>
 					  <option value="1">1</option>
 					  <option value="2">2</option>
@@ -177,15 +177,7 @@
 					    <input type="text" name="match_day" class="form-control" placeholder="ex: Arsenal vs Liverpool">
 				      </div>
 			      </div>
-
-
-
-
 		      </div>
-
-			
-
-			 
 
 			  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 			  <button type="submit" class="btn btn-primary">Continue</button>

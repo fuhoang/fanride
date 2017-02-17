@@ -46,19 +46,26 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-            
+        
+        //dd($request->all());    
+
         $travel_date = Carbon::createFromFormat('d/m/Y H:i', $request->travel_date['date'] .' '.$request->travel_date['hour'].':'.$request->travel_date['min']);
-        //dd($request->return_date);
         $return_date = Carbon::createFromFormat('d/m/Y H:i', $request->return_date['date'] .' '.$request->return_date['hour'].':'.$request->return_date['min']);
 
         $create = Travel::create([
-                    'pickup' => $request->pickup,
-                    'dropoff' => $request->dropoff, 
-                    'travel_date' => $travel_date,
-                    'return_date' => $return_date
+                    'pickup'            => $request->pickup,
+                    'dropoff'           => $request->dropoff, 
+                    'travel_date'       => $travel_date,
+                    'return_date'       => $return_date,
+                    'contribution'      => $request->contribution,
+                    'number_of_seats'   => $request->number_of_seats,
+                    'ride_details'      => $request->ride_details,
+                    'flexibility'       => $request->flexibility,
+                    'team_support'      => $request->team_support,
+                    'match_day'         => $request->match_day
                 ]);
 
-        //echo $create;
+        echo $create;
 
         return Response('lets travel');   
     }

@@ -13,6 +13,16 @@ class Travel extends Model
      * @var array
      */
     protected $fillable = [
-        'pickup', 'dropoff', 'travel_date', 'return_date',
+        'pickup', 
+        'dropoff', 
+        'travel_date', 
+        'return_date',
+        'round_trip',
+        'contribution',
+        'number_of_seats',
+        'ride_details',
+        'flexibility',
+        'team_support',
+        'match_day' 
     ];
 }
