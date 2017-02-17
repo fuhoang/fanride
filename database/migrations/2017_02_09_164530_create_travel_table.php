@@ -19,6 +19,12 @@ class CreateTravelTable extends Migration
             $table->string('travel_date');
             $table->string('return_date');
             $table->string('round_trip');
+            $table->string('contribution');
+            $table->string('number_of_seats');
+            $table->string('ride_details');
+            $table->string('flexibility');
+            $table->string('team_support');
+            $table->string('match_day');
             $table->timestamps();
         });
     }

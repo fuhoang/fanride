@@ -11,14 +11,18 @@
 			  
 			  <h2>Pick-up and drop-off points</h2>
 
-			  <label for="pickUp">Pick-up</label>
-			  <div class="form-group">
-			    <input type="text" name="pickup" class="form-control" id="exampleInputPickUp" aria-describedby="emailHelp" placeholder="Pick up">
-			  </div>
+			  <div class="form-group well"> 
 
-			  <label for="dropOff">drop-off</label>
-			  <div class="form-group">
-			    <input type="text" name="dropoff" class="form-control" id="exampleInputDropOff1" placeholder="Drop-off">
+				  <label for="pickUp">Pick-up</label>
+				  <div class="form-group">
+				    <input type="text" name="pickup" class="form-control" id="exampleInputPickUp" aria-describedby="emailHelp" placeholder="Pick up">
+				  </div>
+
+				  <label for="dropOff">drop-off</label>
+				  <div class="form-group">
+				    <input type="text" name="dropoff" class="form-control" id="exampleInputDropOff1" placeholder="Drop-off">
+				  </div>
+
 			  </div>
 
 			  <hr>
@@ -117,6 +121,71 @@
 
 			  </div>
 			  <hr>
+
+			  <h2>Car Details</h2>	  
+		  	  <div class="form-group well">	
+			  	  <label for="passengerContribution">Passenger Contribution</label>
+				  
+
+				  <div class="input-group">
+				  	<span class="input-group-addon"><span class="glyphicon glyphicon-gbp"></span></span>
+				    <input type="text" name="contribution" class="form-control" id="exampleInputReturnDate" placeholder="Amount">
+				  </div>
+			  </div>
+
+			  <div class="form-group well"> 
+				  <div class="input-group">
+			        <span class="input-group-addon">Number of seats</span>
+			        <select id="lunch" class="selectpicker form-control" data-live-search="true">
+			          <option value="0">0</option>
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+			        </select>
+			      </div>
+		      </div>
+
+		      <div class="form-group well"> 
+				  <div class="form-group">
+			        <label for="rideDetails">Ride Details</label>
+			        <p>Please add further details about your ride - it'll save you from replying to lots of messages from passengers</p>
+			        <textarea class="form-control" name="ride_details" rows="6"></textarea>
+			      </div>
+
+			      <div class="form-group">
+				      <div class="input-group">
+				        <span class="input-group-addon">Pick up flexibility</span>
+				        <select id="lunch" class="selectpicker form-control" name="flexibility">
+				          <option value="ON_TIME">Right on time</option>
+						  <option value="FIFTEEN_MINUTES">In a 15 minutes window</option>
+						  <option value="THIRTY_MINUTES">In a 30 minutes window</option>
+						  <option value="ONE_HOUR">In a 1 hour window</option>
+				        </select>
+				      </div>
+			      </div>
+
+			      <div class="form-group">
+				      <div class="input-group">
+				        <span class="input-group-addon">Team Support</span>
+					    <input type="text" name="team_support" class="form-control" placeholder="">
+				      </div>
+			      </div>
+
+			      <div class="form-group">
+				      <div class="input-group">
+				        <span class="input-group-addon">Match day game</span>
+					    <input type="text" name="match_day" class="form-control" placeholder="ex: Arsenal vs Liverpool">
+				      </div>
+			      </div>
+
+
+
+
+		      </div>
+
+			
+
+			 
 
 			  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 			  <button type="submit" class="btn btn-primary">Continue</button>
