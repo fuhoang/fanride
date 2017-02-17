@@ -32,7 +32,7 @@
 				  </div>
 
 				  <select class="form-control" name="travel_date[hour]">
-					 <option value="" selected="selected"/>
+					<option value="" selected="selected"/>
 					<option value="0">00</option>
 					<option value="1">01</option>
 					<option value="2">02</option>
@@ -60,26 +60,24 @@
 				  </select>
 
 				  <select class="form-control" name="travel_date[min]">
-					  	<option value="" selected="selected"/>
-						<option value="0">00</option>
-						<option value="10">10</option>
-						<option value="20">20</option>
-						<option value="30">30</option>
-						<option value="40">40</option>
-						<option value="50">50</option>
+					 <option value="" selected="selected"/>
+					 <option value="0">00</option>
+					 <option value="10">10</option>
+					 <option value="20">20</option>
+					 <option value="30">30</option>
+					 <option value="40">40</option>
+					 <option value="50">50</option>
 				  </select>
-
-
 			  </div>
 			  
 			  <div class="form-inline well">
+				  
 				  <div class="input-group">
 				  	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-
-				    <input type="text" name="return_date" class="form-control datepicker" id="exampleInputReturnDate" placeholder="Return date:">
+				    <input type="text" name="return_date[date]" class="form-control datepicker" id="exampleInputReturnDate" placeholder="Return date:">
 				  </div>
 
-				  <select class="form-control" name="">
+				  <select class="form-control" name="return_date[hour]">
 					<option value="" selected="selected"/>
 					<option value="0">00</option>
 					<option value="1">01</option>
@@ -107,7 +105,7 @@
 					<option value="23">23</option>
 				  </select>
 
-				  <select class="form-control">
+				  <select class="form-control" name="return_date[min]">
 					<option value="" selected="selected"/>
 					<option value="0">00</option>
 					<option value="10">10</option>
@@ -116,6 +114,7 @@
 					<option value="40">40</option>
 					<option value="50">50</option>
 				  </select>
+
 			  </div>
 			  <hr>
 
