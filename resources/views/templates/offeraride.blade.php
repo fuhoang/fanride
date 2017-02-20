@@ -10,19 +10,26 @@
 			<form method="post" action="/offeraride">
 			  
 			  <h2>Pick-up and drop-off points</h2>
-
 			  <div class="form-group well"> 
-
 				  <label for="pickUp">Pick-up</label>
-				  <div class="form-group">
+				  <div class="form-group{{ $errors->has('pickup') ? ' has-error' : '' }}">
 				    <input type="text" name="pickup" class="form-control" id="exampleInputPickUp" aria-describedby="emailHelp" placeholder="Pick up">
+				    @if ($errors->has('pickup'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('pickup') }}</strong>
+                        </span>
+                    @endif
 				  </div>
 
 				  <label for="dropOff">drop-off</label>
-				  <div class="form-group">
+				  <div class="form-group{{ $errors->has('dropoff') ? ' has-error' : '' }}">
 				    <input type="text" name="dropoff" class="form-control" id="exampleInputDropOff1" placeholder="Drop-off">
+				    @if ($errors->has('dropoff'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('dropoff') }}</strong>
+                        </span>
+                    @endif
 				  </div>
-
 			  </div>
 
 			  <hr>

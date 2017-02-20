@@ -47,7 +47,11 @@ class TravelController extends Controller
     public function store(Request $request)
     {
         
-        //dd($request->all());    
+        //dd($request->all());
+        $this->validate($request, [
+            'pickup'    => 'required',
+            'dropoff'   => 'required',
+        ]);    
 
         $travel_date = Carbon::createFromFormat('d/m/Y H:i', $request->travel_date['date'] .' '.$request->travel_date['hour'].':'.$request->travel_date['min']);
         $return_date = Carbon::createFromFormat('d/m/Y H:i', $request->return_date['date'] .' '.$request->return_date['hour'].':'.$request->return_date['min']);
