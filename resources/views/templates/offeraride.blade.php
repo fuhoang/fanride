@@ -28,10 +28,17 @@
 			  <hr>
 
 			  <h2>Date & Time</h2>
+			  <div class="form-group">
+				<label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+				  <input type="checkbox" name="round_trip" value="1" class="custom-control-input">
+				  <span class="custom-control-indicator"></span>
+				  <span class="custom-control-description">Return trip</span>
+				</label>
+			  </div>
 			  <div class="form-inline well">
+
 				  <div class="input-group date">
 				  	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-
 				    <input type="text" name="travel_date[date]" class="form-control datepicker" aria-describedby="sizing-addon1" placeholder="Travel date:">
 				  </div>
 

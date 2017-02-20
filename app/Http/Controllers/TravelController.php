@@ -57,6 +57,7 @@ class TravelController extends Controller
                     'dropoff'           => $request->dropoff, 
                     'travel_date'       => $travel_date,
                     'return_date'       => $return_date,
+                    'round_trip'        => $request->round_trip,
                     'contribution'      => $request->contribution,
                     'number_of_seats'   => $request->number_of_seats,
                     'ride_details'      => $request->ride_details,

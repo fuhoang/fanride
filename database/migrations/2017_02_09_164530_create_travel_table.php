@@ -16,12 +16,12 @@ class CreateTravelTable extends Migration
             $table->increments('id');
             $table->string('pickup');
             $table->string('dropoff');
-            $table->string('travel_date');
-            $table->string('return_date');
-            $table->string('round_trip');
+            $table->datetime('travel_date');
+            $table->datetime('return_date');
+            $table->tinyInteger('round_trip')->default(0);
             $table->string('contribution');
             $table->string('number_of_seats');
-            $table->string('ride_details');
+            $table->longText('ride_details');
             $table->string('flexibility');
             $table->string('team_support');
             $table->string('match_day');
