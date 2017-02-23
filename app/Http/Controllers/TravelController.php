@@ -49,8 +49,9 @@ class TravelController extends Controller
         
         //dd($request->all());
         $this->validate($request, [
-            'pickup'    => 'required',
-            'dropoff'   => 'required',
+            'pickup'        => 'required',
+            'dropoff'       => 'required',
+            'travel_date'   => 'required|date'
         ]);    
 
         $travel_date = Carbon::createFromFormat('d/m/Y H:i', $request->travel_date['date'] .' '.$request->travel_date['hour'].':'.$request->travel_date['min']);
