@@ -23,7 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('town');
             $table->string('county');
             $table->string('postcode');
-            $table->string('confirmation_code')->nullable();
+            $table->tinyInteger('verified')->default(0);
+            $table->string('email_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
