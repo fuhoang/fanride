@@ -94,7 +94,8 @@ class RegisterController extends Controller
             $email = new EmailVerification(new User(['email_token' => $user->email_token]));
             Mail::to($user->email)->send($email);
             DB::commit();
-            return back();
+            return view('messages.register_confirmation');
+            //return back();
         }
         catch(Exception $e)
         {

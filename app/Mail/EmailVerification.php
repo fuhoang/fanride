@@ -32,7 +32,7 @@ class EmailVerification extends Mailable
      */
     public function build()
     {
-        dd($this->user->email_token);
+        //dd($this->user->email_token);
 
         return $this->view('emails.verification');
     }
