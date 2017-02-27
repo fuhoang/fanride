@@ -4,7 +4,7 @@
 	<title>hello</title>
 </head>
 <body>
-<p>hello</p>
+<h1>Fanride</h1>
 
 
 <a href="{{ url('/register/verify/'. $email_token)}}">{{ $url }}</a>

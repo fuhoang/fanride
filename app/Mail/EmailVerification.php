@@ -25,7 +25,6 @@ class EmailVerification extends Mailable
     public function __construct(User $user)
     {
         $this->user = $user;
-
     }
 
     /**
@@ -35,9 +34,7 @@ class EmailVerification extends Mailable
      */
     public function build(Request $request)
     {
-        //dd($this->user->email_token);
         $url = $request->fullUrl() .'/' . $this->user->email_token;
-
         return $this->view('emails.verification', ['email_token' => $this->user->email_token, 'url' => $url] );
     }
 }
