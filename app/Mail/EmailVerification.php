@@ -3,6 +3,9 @@
 namespace App\Mail;
 
 use App\User;
+
+use Illuminate\Http\Request;
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -30,10 +33,11 @@ class EmailVerification extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build(Request $request)
     {
         //dd($this->user->email_token);
+        $url = $request->fullUrl() .'/' . $this->user->email_token;
 
-        return $this->view('emails.verification');
+        return $this->view('emails.verification', ['email_token' => $this->user->email_token, 'url' => $url] );
     }
 }

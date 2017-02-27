@@ -39,7 +39,7 @@
                         <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                         <li><a href="{{ url('/findaride') }}">Find a ride</a></li>
                         <li><a href="{{ url('/offeraride') }}">Offer a ride</a></li>
-                        <li><a href="{{ url('/account/' . Auth::user()->id . '/edit') }}">Account</a></li>
+                        <li><a href="{{ url('/account/verify' . Auth::user()->id . '/edit') }}">Account</a></li>
                         <li><a href="{{ url('/help') }}">Help</a></li>
                     </ul>
                     @endif
