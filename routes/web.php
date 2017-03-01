@@ -11,12 +11,14 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('templates.home');
 });
 
-
-
+//Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+//Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 Route::get('/dashboard', function(){
 	return view('templates.dashboard');
 });
@@ -24,6 +26,8 @@ Route::get('/dashboard', function(){
 
 Route::resource('account', 'AccountController');
 Route::resource('offeraride', 'TravelController');
+
+//Route::resource('password', 'Auth\ForgotPasswordController');
 
 
 Route::get('/register/verify/{token}', 'Auth\RegisterController@verify'); 
@@ -35,7 +39,7 @@ Route::get('/findaride', function(){
 	return view('templates.findaride');
 });
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index');
 //Route::post('/logout','LoginController@logout');
