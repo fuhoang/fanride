@@ -43,4 +43,4 @@ Route::get('/findaride', function(){
 
 Route::get('/home', 'HomeController@index');
 //Route::post('/logout','LoginController@logout');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+//Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
