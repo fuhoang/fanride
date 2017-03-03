@@ -35,6 +35,7 @@
 			  <hr>
 
 			  <h2>Date & Time</h2>
+			  
 			  <div class="form-group">
 				<label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
 				  <input type="checkbox" name="round_trip" value="1" class="custom-control-input">
@@ -42,13 +43,22 @@
 				  <span class="custom-control-description">Return trip</span>
 				</label>
 			  </div>
+
 			  <div class="form-inline well">
 
-				  <div class="input-group date">
-				  	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-				    <input type="text" name="travel_date[date]" class="form-control datepicker" aria-describedby="sizing-addon1" placeholder="Travel date:">
+			  	  <div class="input-group">
+					  <div class="input-group date {{ $errors->has('travel_date') ? ' has-error' : '' }}">
+					  	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+					    <input type="text" name="travel_date[date]" class="form-control datepicker" aria-describedby="sizing-addon1" placeholder="Travel date:">
+					  </div>
+					   @if ($errors->has('travel_date'))
+	                    <span class="help-block">
+	                         <strong>{{ $errors->first('travel_date') }}</strong>
+	                    </span>
+	                  @endif
 				  </div>
 
+                  <div class="input-group">
 				  <select class="form-control" name="travel_date[hour]">
 					<option value="" selected="selected"/>
 					<option value="0">00</option>
@@ -76,7 +86,9 @@
 					<option value="22">22</option>
 					<option value="23">23</option>
 				  </select>
+				  </div>
 
+				  <div class="input-group">
 				  <select class="form-control" name="travel_date[min]">
 					 <option value="" selected="selected"/>
 					 <option value="00">00</option>
@@ -86,6 +98,7 @@
 					 <option value="40">40</option>
 					 <option value="50">50</option>
 				  </select>
+				  </div>
 			  </div>
 			  
 			  <div class="form-inline well">
@@ -148,7 +161,7 @@
 			  </div>
 
 			  <div class="form-group well"> 
-				  <div class="input-group">
+				  <div class="input-group {{ $errors->has('number_of_seats') ? ' has-error' : '' }}">
 			        <span class="input-group-addon">Number of seats</span>
 			        <select id="lunch" class="selectpicker form-control" name="number_of_seats">
 			          <option value="0">0</option>
@@ -157,6 +170,11 @@
 					  <option value="3">3</option>
 			        </select>
 			      </div>
+			      @if ($errors->has('number_of_seats'))
+	              <span class="help-block">
+	                <strong>{{ $errors->first('number_of_seats') }}</strong>
+	              </span>
+	              @endif
 		      </div>
 
 		      <div class="form-group well"> 
@@ -179,17 +197,27 @@
 			      </div>
 
 			      <div class="form-group">
-				      <div class="input-group">
+				      <div class="input-group {{ $errors->has('team_support') ? ' has-error' : '' }}">
 				        <span class="input-group-addon">Team Support</span>
 					    <input type="text" name="team_support" class="form-control" placeholder="">
 				      </div>
+				      @if ($errors->has('team_support'))
+	              	  <span class="help-block">
+	                	<strong>{{ $errors->first('team_support') }}</strong>
+	              	  </span>
+	              	  @endif
 			      </div>
 
 			      <div class="form-group">
-				      <div class="input-group">
+				      <div class="input-group {{ $errors->has('match_day') ? ' has-error' : '' }}">
 				        <span class="input-group-addon">Match day game</span>
 					    <input type="text" name="match_day" class="form-control" placeholder="ex: Arsenal vs Liverpool">
 				      </div>
+				      @if ($errors->has('match_day'))
+	              	  <span class="help-block">
+	                	<strong>{{ $errors->first('match_day') }}</strong>
+	              	  </span>
+	              	  @endif
 			      </div>
 		      </div>
 
