@@ -17,8 +17,7 @@ Route::get('/', function () {
     return view('templates.home');
 });
 
-//Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-//Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+
 Route::get('/dashboard', function(){
 	return view('templates.dashboard');
 });
@@ -42,5 +41,3 @@ Route::get('/findaride', function(){
 
 
 Route::get('/home', 'HomeController@index');
-//Route::post('/logout','LoginController@logout');
-//Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

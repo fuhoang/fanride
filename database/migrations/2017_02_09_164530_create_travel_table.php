@@ -14,6 +14,7 @@ class CreateTravelTable extends Migration
     {
         Schema::create('travels', function(Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('pickup');
             $table->string('dropoff');
             $table->datetime('travel_date');
@@ -26,6 +27,11 @@ class CreateTravelTable extends Migration
             $table->string('team_support');
             $table->string('match_day');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
         });
     }
 

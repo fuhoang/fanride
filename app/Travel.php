@@ -13,6 +13,7 @@ class Travel extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'pickup', 
         'dropoff', 
         'travel_date', 
@@ -25,4 +26,13 @@ class Travel extends Model
         'team_support',
         'match_day' 
     ];
+
+    /**
+     *  An travel is owned by a user
+     *  @return \Illuminate\Database\Eloquent\Relations\BelongTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

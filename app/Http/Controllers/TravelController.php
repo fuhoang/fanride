@@ -2,16 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Travel;
-
 use Carbon\Carbon;
 
 
 class TravelController extends Controller
 {
+
+    /**
+     * Travel Controller
+     *
+     * @return void
+     */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -47,22 +57,28 @@ class TravelController extends Controller
     public function store(Request $request)
     {
         
-        //dd($request->all());
+        //dd(Auth::id());
+
         $this->validate($request, [
             'pickup'            => 'required',
             'dropoff'           => 'required',
-            'travel_date'       => 'required|date',
+            'travel_date'       => 'required',
 
             'number_of_seats'   => 'required|integer|not_in:0',
             'team_support'      => 'required',
             'match_day'         => 'required',
 
-        ]);    
+        ]);
+
+        if($request->round_trip == null){
+            $request->round_trip = 0;
+        } 
 
         $travel_date = Carbon::createFromFormat('d/m/Y H:i', $request->travel_date['date'] .' '.$request->travel_date['hour'].':'.$request->travel_date['min']);
         $return_date = Carbon::createFromFormat('d/m/Y H:i', $request->return_date['date'] .' '.$request->return_date['hour'].':'.$request->return_date['min']);
 
         $create = Travel::create([
+                    'user_id'           => Auth::id(),
                     'pickup'            => $request->pickup,
                     'dropoff'           => $request->dropoff, 
                     'travel_date'       => $travel_date,
