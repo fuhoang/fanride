@@ -17,6 +17,11 @@
 				  <div class="panel-body">
 				    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
 	  				{{ Carbon\Carbon::parse($travel->travel_date)->format('D d M - H:i') }}
+
+	  				<ul class="list-inline">
+					  <li><a href="#">Edit</a></li>
+					  <li><a href="#">Delete</a></li>
+					</ul>
 				  </div>
 				</div>
 
