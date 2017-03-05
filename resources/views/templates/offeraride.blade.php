@@ -221,6 +221,21 @@
 			      </div>
 		      </div>
 
+
+		      <div class="form-group well"> 
+				  <div class="input-group {{ $errors->has('number_of_seats') ? ' has-error' : '' }}">
+			      	<div class="checkbox">
+					    <label>
+					      <input type="checkbox" name="terms_condition" value="1"> I accept the <a href="#">T&Cs</a> and <a href="#">Privacy Policy</a>, certify that I hold a driving licence and have valid car insurance.
+					    </label>
+					 </div>
+			      </div>
+			      @if ($errors->has('number_of_seats'))
+	              <span class="help-block">
+	                <strong>{{ $errors->first('number_of_seats') }}</strong>
+	              </span>
+	              @endif
+		      </div>
 			  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 			  <button type="submit" class="btn btn-primary">Continue</button>
 			</form>

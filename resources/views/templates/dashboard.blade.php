@@ -10,7 +10,6 @@
 			@foreach ($travels as $travel)
     			<p>This is travel {{ $travel->id }}</p>
 
-
 				<div class="panel panel-default">
 				  <div class="panel-heading">
 				    <h3 class="panel-title">{{ $travel->pickup }} -> {{ $travel->dropoff }}</h3>
