@@ -94,7 +94,7 @@ class TravelController extends Controller
 
         echo $create;
 
-        return Response('lets travel');   
+        return redirect('/dashboard');   
     }
 
     /**

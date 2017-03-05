@@ -17,14 +17,15 @@ Route::get('/', function () {
     return view('templates.home');
 });
 
-
+/*
 Route::get('/dashboard', function(){
 	return view('templates.dashboard');
 });
-
+*/
 
 Route::resource('account', 'AccountController');
 Route::resource('offeraride', 'TravelController');
+Route::resource('dashboard', 'DashboardController');
 
 //Route::resource('password', 'Auth\ForgotPasswordController');
 
