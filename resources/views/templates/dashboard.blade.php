@@ -7,6 +7,14 @@
 		<div class="container">
 			<h1>Your Dashboard</h1>
 
+			@if(Session::has('message'))
+        		<div class="alert alert-info">
+            		<a class="close" data-dismiss="alert">×</a>
+            		{!!Session::get('message')!!}
+        		</div>
+    		@endif
+
+
 			@foreach ($travels as $travel)
     			<p>This is travel {{ $travel->id }}</p>
 
@@ -20,7 +28,16 @@
 
 	  				<ul class="list-inline">
 					  <li><a href="{{ url('/offeraride/' . $travel->id ) }}">Edit</a></li>
-					  <li><a href="#">Delete</a></li>
+					  <li>
+                        <a href="{{ url('/offeraride/delete/' .$travel->id ) }}" onclick="event.preventDefault(); document.getElementById('delete-form').submit();">
+                            Delete
+                        </a>
+
+                        <form id="delete-form" action="{{ url('/offeraride/delete/'. $travel->id) }}" method="POST" style="display: none;">
+                        	<input type="hidden" name="_method" value="DELETE">
+                            {{ csrf_field() }}
+                        </form>
+                      </li>
 					</ul>
 				  </div>
 				</div>

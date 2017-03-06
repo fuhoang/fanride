@@ -28,6 +28,7 @@ Route::get('/offeraride', 'TravelController@create');
 Route::post('/offeraride/store', 'TravelController@store');
 Route::get('/offeraride/{id}', 'TravelController@edit');
 Route::put('/offeraride/{id}', 'TravelController@update');
+Route::delete('/offeraride/delete/{id}', 'TravelController@destroy');
 
 
 Route::resource('account', 'AccountController');

@@ -215,7 +215,7 @@ class TravelController extends Controller
         }else{
             $return_date = null;
         }
-        
+
         Travel::where("id", $id)->update(
             [
                 'pickup'            => $request->pickup,
@@ -230,6 +230,8 @@ class TravelController extends Controller
                 'team_support'      => $request->team_support,
                 'match_day'         => $request->match_day
             ]);
+
+        return redirect('/dashboard')->with('message', 'Your trip has been updated');
     }
 
     /**
@@ -241,5 +243,6 @@ class TravelController extends Controller
     public function destroy($id)
     {
         //
+        return Travel::where('id', $id)->delete();
     }
 }
