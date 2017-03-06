@@ -5,7 +5,7 @@
 		<div class="container">
 			<h1>Offer a ride</h1>
 
-			<form method="post" action="/offeraride">
+			<form method="post" action="{{ url('/offeraride/' . $travel->id) }}">
 			  
 			  <h2>Pick-up and drop-off points</h2>
 			  <div class="form-group well"> 
@@ -188,6 +188,7 @@
 		      </div>
 
 			  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+			  <input type="hidden" name="_method" value="PUT">
 			  <button type="submit" class="btn btn-primary">Continue</button>
 			</form>
 

@@ -27,6 +27,7 @@ Route::get('/dashboard', function(){
 Route::get('/offeraride', 'TravelController@create');
 Route::post('/offeraride/store', 'TravelController@store');
 Route::get('/offeraride/{id}', 'TravelController@edit');
+Route::put('/offeraride/{id}', 'TravelController@update');
 
 
 Route::resource('account', 'AccountController');

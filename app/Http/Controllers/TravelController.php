@@ -207,6 +207,29 @@ class TravelController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $travel_date = Carbon::createFromFormat('d/m/Y H:i', $request->travel_date['date'] .' '.$request->travel_date['hour'].':'.$request->travel_date['min']);
+
+        if($request->return_date !== null){
+            $return_date = Carbon::createFromFormat('d/m/Y H:i', $request->return_date['date'] .' '.$request->return_date['hour'].':'.$request->return_date['min']);
+        }else{
+            $return_date = null;
+        }
+        
+        Travel::where("id", $id)->update(
+            [
+                'pickup'            => $request->pickup,
+                'dropoff'           => $request->dropoff, 
+                'travel_date'       => $travel_date,
+                'return_date'       => $return_date,
+                'round_trip'        => $request->round_trip,
+                'contribution'      => $request->contribution,
+                'number_of_seats'   => $request->number_of_seats,
+                'ride_details'      => $request->ride_details,
+                'flexibility'       => $request->flexibility,
+                'team_support'      => $request->team_support,
+                'match_day'         => $request->match_day
+            ]);
     }
 
     /**
