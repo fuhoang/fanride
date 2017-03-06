@@ -23,8 +23,13 @@ Route::get('/dashboard', function(){
 });
 */
 
+// offer a ride
+Route::get('/offeraride', 'TravelController@create');
+Route::post('/offeraride/store', 'TravelController@store');
+Route::get('/offeraride/{id}', 'TravelController@edit');
+
+
 Route::resource('account', 'AccountController');
-Route::resource('offeraride', 'TravelController');
 Route::resource('dashboard', 'DashboardController');
 
 //Route::resource('password', 'Auth\ForgotPasswordController');

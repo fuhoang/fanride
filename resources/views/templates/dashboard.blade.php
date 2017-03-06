@@ -19,7 +19,7 @@
 	  				{{ Carbon\Carbon::parse($travel->travel_date)->format('D d M - H:i') }}
 
 	  				<ul class="list-inline">
-					  <li><a href="#">Edit</a></li>
+					  <li><a href="{{ url('/offeraride/' . $travel->id ) }}">Edit</a></li>
 					  <li><a href="#">Delete</a></li>
 					</ul>
 				  </div>

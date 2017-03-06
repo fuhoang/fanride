@@ -5,7 +5,7 @@
 		<div class="container">
 			<h1>Offer a ride</h1>
 
-			<form method="post" action="/offeraride">
+			<form method="post" action="/offeraride/store">
 			  
 			  <h2>Pick-up and drop-off points</h2>
 			  <div class="form-group well"> 
