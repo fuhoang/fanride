@@ -33,6 +33,7 @@ Route::delete('/offeraride/delete/{id}', 'TravelController@destroy');
 
 Route::resource('account', 'AccountController');
 Route::resource('dashboard', 'DashboardController');
+Route::resource('findaride', 'SearchController');
 
 //Route::resource('password', 'Auth\ForgotPasswordController');
 
@@ -42,10 +43,11 @@ Route::get('/register/verify/{token}', 'Auth\RegisterController@verify');
 Route::get('/account', 'AccountController@index');
 //Route::get('/offeraride', 'TravelController@index');
 
+/*
 Route::get('/findaride', function(){
 	return view('templates.findaride');
 });
-
+*/
 
 
 Route::get('/home', 'HomeController@index');

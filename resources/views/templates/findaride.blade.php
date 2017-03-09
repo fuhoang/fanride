@@ -8,19 +8,17 @@
 			<h1>Find a ride</h1>
 
 			<form>
-			  <label for="from">From</label>
-			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputFrom" aria-describedby="emailHelp" placeholder="From">
-			  </div>
+				<div class="form-group">
+				 	<select class="form-control">
+				 	@foreach($sports as $sport)
+	  					<option>{{ $sport->sport }}</option>
+					@endforeach
+					</select>
+			  	</div>
 
-			  <label for="to">To</label>
-			  <div class="form-group">
-			    <input type="text" name="" class="form-control" id="exampleInputTo" placeholder="To">
-			  </div>
 
-			  <hr>
-			  
-			  <button type="submit" class="btn btn-primary">Continue</button>
+			  	<hr>
+			  	<button type="submit" class="btn btn-primary">Continue</button>
 			</form>
 
 		</div>
