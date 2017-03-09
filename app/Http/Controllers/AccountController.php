@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,6 +12,17 @@ use App\User;
 
 class AccountController extends Controller
 {
+
+    /**
+     * Travel Controller
+     *
+     * @return void
+     */
+    public function __construct(){
+
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *

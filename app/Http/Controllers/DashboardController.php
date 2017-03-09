@@ -10,6 +10,11 @@ use App\Travel;
 
 class DashboardController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +27,6 @@ class DashboardController extends Controller
         //$travels = 'That email belongs to an existing referrer.';
         //print_r($travel);
         //dd($travel);
-
         return view('templates.dashboard', compact('travels'));
     }
 
