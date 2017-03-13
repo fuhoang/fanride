@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+
+use Response;
+
 use App\Sport;
+use App\League;
+
+
 
 class SearchController extends Controller
 {
@@ -97,6 +103,44 @@ class SearchController extends Controller
     }
 
     /**
+     * Fetch team by sports_id
+     * 
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function fixtures($id)
+    {   
+
+    }
+
+    /**
+     * Fetch team by sports_id
+     * 
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function teams($id)
+    {   
+
+    }
+
+    /**
+     * Fetch team by leagues_id
+     * 
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function leagues($id)
+    {   
+        
+        $leagues = Sport::find($id)->leagues()->get();
+        //dd($leagues);
+        //print_r($leagues);
+        return Response::json(['leagues' => $leagues]);
+
+    }
+
+    /**
      * Fetch all sports type
      *
      * @return array
@@ -105,4 +149,6 @@ class SearchController extends Controller
     {   
         return Sport::all();
     }
+
+
 }

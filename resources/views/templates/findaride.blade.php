@@ -9,9 +9,17 @@
 
 			<form>
 				<div class="form-group">
-				 	<select class="form-control">
+				 	<select id="sports-category" class="form-control">
 				 	@foreach($sports as $sport)
-	  					<option>{{ $sport->sport }}</option>
+	  					<option value="{{ $sport->id }}">{{ $sport->sport }}</option>
+					@endforeach
+					</select>
+			  	</div>
+
+			  	<div class="form-group">
+				 	<select id="league" class="form-control">
+				 	@foreach($sports as $sport)
+	  					<option value="{{ $sport->id }}">{{ $sport->sport }}</option>
 					@endforeach
 					</select>
 			  	</div>
