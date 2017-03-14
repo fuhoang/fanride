@@ -38,6 +38,7 @@ Route::resource('findaride', 'SearchController');
 //Route::resource('password', 'Auth\ForgotPasswordController');
 
 Route::get('/leagues/{id}', 'SearchController@leagues');
+Route::get('/teams/{id}', 'SearchController@teams');
 
 
 Route::get('/register/verify/{token}', 'Auth\RegisterController@verify'); 

@@ -20,5 +20,8 @@ elixir(function(mix) {
     .copy(bootstrapPath + '/fonts', 'public/fonts')
     .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js')
     .copy('node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', 'public/css')
-    .copy('node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', 'public/js');
+    .copy('node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js', 'public/js')
+    .copy('node_modules/bootstrap-select/dist/js/bootstrap-select.min.js', 'public/js')
+     .copy('node_modules/bootstrap-select/dist/css/bootstrap-select.min.css', 'public/css');
+
 });

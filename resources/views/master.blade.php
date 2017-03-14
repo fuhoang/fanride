@@ -16,6 +16,7 @@
         
         <link href="{{ asset('/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Scripts -->
@@ -122,6 +123,7 @@
         <script type="text/javascript" src="{{ asset('/js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/bootstrap-datepicker.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('/js/bootstrap-select.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('/js/app.js') }}"></script>
 
 

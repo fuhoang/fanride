@@ -9,18 +9,23 @@
 
 			<form>
 				<div class="form-group">
-				 	<select id="sports-category" class="form-control">
+				 	<select id="selectSports" class="selectpicker">
+				 		<option value="">Select a Sport</option>
 				 	@foreach($sports as $sport)
 	  					<option value="{{ $sport->id }}">{{ $sport->sport }}</option>
 					@endforeach
 					</select>
 			  	</div>
 
-			  	<div class="form-group">
-				 	<select id="league" class="form-control">
-				 	@foreach($sports as $sport)
-	  					<option value="{{ $sport->id }}">{{ $sport->sport }}</option>
-					@endforeach
+			  	<div class="form-group ">
+				 	<select id="selectLeagues" class="selectpicker">
+	  					<option value="">Select a League</option>
+					</select>
+			  	</div>
+
+			  	<div class="form-group" >
+				 	<select id="selectTeams" class="selectpicker">
+	  					<option value="">Select a Team</option>
 					</select>
 			  	</div>
 

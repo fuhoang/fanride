@@ -121,7 +121,8 @@ class SearchController extends Controller
      */
     public function teams($id)
     {   
-
+        $teams = League::find($id)->teams()->get();
+        return Response::json($teams, 200);
     }
 
     /**
@@ -136,7 +137,7 @@ class SearchController extends Controller
         $leagues = Sport::find($id)->leagues()->get();
         //dd($leagues);
         //print_r($leagues);
-        return Response::json(['leagues' => $leagues]);
+        return Response::json($leagues, 200);
 
     }
 
