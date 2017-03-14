@@ -9,6 +9,7 @@ use Response;
 
 use App\Sport;
 use App\League;
+use App\Team;
 
 
 
@@ -110,7 +111,8 @@ class SearchController extends Controller
      */
     public function fixtures($id)
     {   
-
+        $fixtures = Team::find($id)->fixtures()->get();
+        return Response::json($fixtures, 200);
     }
 
     /**

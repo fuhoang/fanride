@@ -68,8 +68,37 @@ $(function(){
 	            console.log(exception);
 	        }
 	    });
-
   	});
+
+
+  	$('#selectTeams').on('change', function() {
+  		$team_id = $('#selectTeams').val();
+  		
+  		console.log('Team ID: ' + $team_id);
+  		$('.fixtures-list').empty();
+  		apiurl = 'http://fanride.local/fixtures/' + $team_id
+		$.ajax({
+	    	url: apiurl,
+	        type: 'GET',
+	        crossDomain: true,
+	        success: function (returnData) {
+	        	console.log(returnData);
+	        	$.each(returnData, function (key, value) {
+	        		console.log(key);
+	        		console.log(value);
+	        		console.log(value.id);
+	        		console.log(value.fixture);
+	        		jQuery('.fixtures-list').append('<a href="#" class="list-group-item">'+ value.fixture +'</a>');
+
+	        	});
+	        },
+	        error: function (exception) {
+	            console.log(exception);
+	        }
+	    });
+  	});
+
+
 
 
   }
