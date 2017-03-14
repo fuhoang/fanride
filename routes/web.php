@@ -35,6 +35,8 @@ Route::resource('account', 'AccountController');
 Route::resource('dashboard', 'DashboardController');
 Route::resource('findaride', 'SearchController');
 
+Route::get('/results/{fixture}', 'SearchController@show');
+
 //Route::resource('password', 'Auth\ForgotPasswordController');
 
 Route::get('/leagues/{id}', 'SearchController@leagues');
