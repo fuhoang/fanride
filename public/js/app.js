@@ -88,7 +88,18 @@ $(function(){
 	        		console.log(value);
 	        		console.log(value.id);
 	        		console.log(value.fixture);
-	        		jQuery('.fixtures-list').append('<a href="#" class="list-group-item">'+ value.fixture +'</a>');
+
+	        		
+	        		var encodedResult = value.fixture;
+	        		
+	        		encodedResult = encodedResult.replace(/\s+/g, '-').toLowerCase();
+	        		console.log(encodedResult);
+	        		var urlResult = 'http://fanride.local/results/' + encodedResult;
+
+
+	        		
+	        		console.log(encodeURIComponent(value.fixture));
+	        		jQuery('.fixtures-list').append('<a href="' + urlResult	 + '"  class="list-group-item">'+ value.fixture +'</a>');
 
 	        	});
 	        },

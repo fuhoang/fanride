@@ -10,6 +10,7 @@ use Response;
 use App\Sport;
 use App\League;
 use App\Team;
+use App\Fixture;
 
 
 
@@ -32,8 +33,6 @@ class SearchController extends Controller
 
         //echo 'hi';
         //dd($sports);
-
-
         return view('templates.findaride', compact('sports'));
     }
 
@@ -66,7 +65,10 @@ class SearchController extends Controller
      */
     public function show($fixture)
     {
-        echo $fixture;    
+        echo $fixture;
+
+        $fixtures = Fixture::where('fixture', 'LIKE', "%{$fixture}%")->get();
+        dd($fixtures);
         return view('templates.results');
     }
 
