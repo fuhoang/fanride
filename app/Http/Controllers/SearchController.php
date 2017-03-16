@@ -12,7 +12,7 @@ use App\League;
 use App\Team;
 use App\Fixture;
 
-
+use App\Travel;
 
 class SearchController extends Controller
 {
@@ -20,7 +20,7 @@ class SearchController extends Controller
 
 
     public function __construct(){
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
     /**
      * Display a listing of the resource.
@@ -66,10 +66,13 @@ class SearchController extends Controller
     public function show($fixture)
     {
         echo $fixture;
+        $fixture = str_replace("-", " ", $fixture);
 
-        $fixtures = Fixture::where('fixture', 'LIKE', "%{$fixture}%")->get();
-        dd($fixtures);
-        return view('templates.results');
+        echo $fixture;
+
+        $fixtures = Travel::where('match_day', 'LIKE', "%{$fixture}%")->get();
+        //dd($fixtures);
+        return view('templates.results', compact('fixtures'));
     }
 
     /**
