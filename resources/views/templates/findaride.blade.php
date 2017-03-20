@@ -6,10 +6,7 @@
 	<hr>
 	<div class="form-group">
 	 	<select id="selectSports" class="selectpicker">
-	 		<option value="">Select a Sport</option>
-	 	@foreach($sports as $sport)
-				<option value="{{ $sport->id }}">{{ $sport->sport }}</option>
-		@endforeach
+	 		<option value="">Select a Sports</option>
 		</select>
   	</div>
 

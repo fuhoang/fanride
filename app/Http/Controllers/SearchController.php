@@ -17,11 +17,10 @@ use App\Travel;
 class SearchController extends Controller
 {
 
-
-
     public function __construct(){
         //$this->middleware('guest');
     }
+    
     /**
      * Display a listing of the resource.
      *
@@ -29,11 +28,8 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {
-        $sports = $this->sports();
-
-        //echo 'hi';
-        //dd($sports);
-        return view('templates.findaride', compact('sports'));
+        
+        return view('templates.findaride');
     }
 
     /**
@@ -154,10 +150,10 @@ class SearchController extends Controller
      *
      * @return array
      */    
-    private function sports()
+    public function sports()
     {   
-        return Sport::all();
+        $sports = Sport::all();
+        return Response::json($sports, 200);
     }
-
 
 }

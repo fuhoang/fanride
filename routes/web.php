@@ -34,6 +34,7 @@ Route::get('/match', 'FixtureController@create');
 
 
 
+
 Route::resource('account', 'AccountController');
 Route::resource('dashboard', 'DashboardController');
 Route::resource('findaride', 'SearchController');
@@ -41,7 +42,7 @@ Route::resource('findaride', 'SearchController');
 Route::get('/results/{fixture}', 'SearchController@show');
 
 //Route::resource('password', 'Auth\ForgotPasswordController');
-
+Route::get('/sports', 'SearchController@sports');
 Route::get('/leagues/{id}', 'SearchController@leagues');
 Route::get('/teams/{id}', 'SearchController@teams');
 Route::get('/fixtures/{id}', 'SearchController@fixtures');

@@ -12,26 +12,29 @@
 	<form method="post" action="/offeraride">
 		<div class="form-group">
 		 	<select id="selectSports" class="selectpicker">
-		 		<option value="">Select a Sport</option>
+		 		<option value="">Select a Sports</option>
 			</select>
 	  	</div>
-
+	  	<hr>
 	  	<div class="form-group ">
 		 	<select id="selectLeagues" class="selectpicker">
 					<option value="">Select a League</option>
 			</select>
 	  	</div>
-
+	  	<hr>
 	  	<div class="form-group" >
 		 	<select id="selectTeams" class="selectpicker">
 					<option value="">Select a Team</option>
 			</select>
 	  	</div>
 		<hr>
-
-		<div class="list-group fixtures-list">
-		</div>
-
+		<div class="form-group" >
+		 	<select id="selectFixtures" class="selectpicker">
+					<option value="">Select a Fixture</option>
+			</select>
+	  	</div>
+		
+		<hr>
 		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 	  	<button type="submit" class="btn btn-primary">Continue</button>
 	</form>

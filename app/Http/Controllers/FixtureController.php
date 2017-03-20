@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Response;
+use App\Sport;
 
 class FixtureController extends Controller
 {
@@ -31,6 +33,17 @@ class FixtureController extends Controller
         return view('templates.selectamatch');
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
 
     /**
      * Fetch list of sport
@@ -38,7 +51,8 @@ class FixtureController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function sports()
-    {
-
+    {	
+    	$sports = Sport::all();
+    	return Response::json($sports, 200);
     }
 }
