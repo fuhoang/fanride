@@ -3,19 +3,16 @@
 @section('content')
 <div class="container">
 	
-	<h1>Find a Match</h1>
+	<h1>Find a match day fixture</h1>
 	
 	<hr>
 
-	<p>Find a match you want to offer a ride to.</p>
+	<p>Find a fixture you want to offer a ride to.</p>
 	
-	<form method="post" action="">
+	<form method="post" action="/offeraride">
 		<div class="form-group">
 		 	<select id="selectSports" class="selectpicker">
 		 		<option value="">Select a Sport</option>
-		 	@foreach($sports as $sport)
-					<option value="{{ $sport->id }}">{{ $sport->sport }}</option>
-			@endforeach
 			</select>
 	  	</div>
 

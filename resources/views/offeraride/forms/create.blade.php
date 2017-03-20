@@ -4,6 +4,20 @@
 <div class="container">
 	<h1>Offer a ride</h1>
 
+	<hr>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Plan a trip to Manchester vs Arsenal</h3>
+		</div>
+		<div class="panel-body">
+			Date: Sat 25th Match 2017
+		</div>
+	</div>
+
+	<hr>
+
+
 	<form method="post" action="/offeraride/store">
 	  
 	  <h2>Pick-up and drop-off points</h2>

@@ -24,11 +24,14 @@ Route::get('/dashboard', function(){
 */
 
 // offer a ride
-Route::get('/offeraride', 'TravelController@create');
+Route::post('/offeraride', 'TravelController@create');
 Route::post('/offeraride/store', 'TravelController@store');
 Route::get('/offeraride/{id}', 'TravelController@edit');
 Route::put('/offeraride/{id}', 'TravelController@update');
 Route::delete('/offeraride/delete/{id}', 'TravelController@destroy');
+
+Route::get('/match', 'FixtureController@create');
+
 
 
 Route::resource('account', 'AccountController');
