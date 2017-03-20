@@ -88,8 +88,9 @@
             </div>
         </nav>
 
-      
+        <div class="content-section">
         @yield('content')
+        </div>
         
 
         <!-- Footer -->
