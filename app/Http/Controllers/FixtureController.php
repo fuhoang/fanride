@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Response;
 use App\Sport;
+use App\Fixture;
+use App\User;
+use Auth;
 
 class FixtureController extends Controller
 {
@@ -42,6 +45,19 @@ class FixtureController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->fixture);
+        $user_id = Auth::id();
+        //dd($user_id);
+        $user = User::find($user_id);
+        $user->fixtures()->sync([$request->fixture]);
+        //dd($user);	
+
+
+
+        //Fixture
+
+
+        return redirect()->route('offeraride', ['fixture_id' => $request->fixture]);
     }
 
 

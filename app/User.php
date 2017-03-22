@@ -33,4 +33,9 @@ class User extends Authenticatable
         $this->email_token = null;
         $this->save();
     }
+
+    public function fixtures()
+    {
+        return $this->belongsToMany('App\Fixture');
+    }
 }

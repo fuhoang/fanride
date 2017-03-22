@@ -7,6 +7,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Travel;
+use App\Fixture;
 use Carbon\Carbon;
 
 
@@ -43,10 +44,11 @@ class TravelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($fixture_id)
     {
-        //
-        return view('offeraride.forms.create');
+        $fixtures = Fixture::find($fixture_id)->first();
+        //dd($fixtures);
+        return view('offeraride.forms.create', compact('fixtures'));
     }
 
     /**

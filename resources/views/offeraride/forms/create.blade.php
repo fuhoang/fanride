@@ -7,12 +7,18 @@
 	<hr>
 
 	<div class="panel panel-primary">
+		
 		<div class="panel-heading">
-			<h3 class="panel-title">Plan a trip to Manchester vs Arsenal</h3>
+			<h3 class="panel-title">Plan a trip to {{ $fixtures->fixture }}</h3>
 		</div>
 		<div class="panel-body">
-			Date: Sat 25th Match 2017
+			<ul>
+				<li>Date: Sat 25th Match 2017</li>
+				<li>Stadium: {{ $fixtures->stadium }}</li>
+				<li>Kick off: {{ $fixtures->kick_off_time }}</li>
+			</ul>
 		</div>
+		
 	</div>
 
 	<hr>

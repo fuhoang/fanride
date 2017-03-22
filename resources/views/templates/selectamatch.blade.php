@@ -9,7 +9,7 @@
 
 	<p>Find a fixture you want to offer a ride to.</p>
 	
-	<form method="post" action="/offeraride">
+	<form method="post" action="/match/store">
 		<div class="form-group">
 		 	<select id="selectSports" class="selectpicker">
 		 		<option value="">Select a Sports</option>
@@ -29,7 +29,7 @@
 	  	</div>
 		<hr>
 		<div class="form-group" >
-		 	<select id="selectFixtures" class="selectpicker">
+		 	<select id="selectFixtures" class="selectpicker" name="fixture">
 					<option value="">Select a Fixture</option>
 			</select>
 	  	</div>
