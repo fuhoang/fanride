@@ -14,6 +14,7 @@ class Travel extends Model
      */
     protected $fillable = [
         'user_id',
+        'fixture_id',
         'pickup', 
         'dropoff', 
         'travel_date', 
@@ -23,8 +24,7 @@ class Travel extends Model
         'number_of_seats',
         'ride_details',
         'flexibility',
-        'team_support',
-        'match_day' 
+        'team_support'
     ];
 
     /**

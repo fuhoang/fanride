@@ -26,7 +26,7 @@ Route::get('/dashboard', function(){
 // offer a ride
 Route::get('/offeraride/{fixture_id}', ['as' => 'offeraride', 'uses' => 'TravelController@create']);
 Route::post('/offeraride/store', 'TravelController@store');
-Route::get('/offeraride/{id}', 'TravelController@edit');
+Route::get('/offeraride/{id}/edit', 'TravelController@edit');
 Route::put('/offeraride/{id}', 'TravelController@update');
 Route::delete('/offeraride/delete/{id}', 'TravelController@destroy');
 

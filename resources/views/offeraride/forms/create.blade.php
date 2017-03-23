@@ -224,18 +224,6 @@
           	  </span>
           	  @endif
 	      </div>
-
-	      <div class="form-group">
-		      <div class="input-group {{ $errors->has('match_day') ? ' has-error' : '' }}">
-		        <span class="input-group-addon">Match day game</span>
-			    <input type="text" name="match_day" class="form-control" placeholder="ex: Arsenal vs Liverpool">
-		      </div>
-		      @if ($errors->has('match_day'))
-          	  <span class="help-block">
-            	<strong>{{ $errors->first('match_day') }}</strong>
-          	  </span>
-          	  @endif
-	      </div>
       </div>
 
 
@@ -253,6 +241,9 @@
           </span>
           @endif
       </div>
+
+
+      <input type="hidden" name="fixture_id" value="{{ $fixtures->id }}">
 	  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 	  <button type="submit" class="btn btn-primary">Continue</button>
 	</form>

@@ -35,8 +35,6 @@ class TravelController extends Controller
 
         echo "hello";
         print_r($input);
-
-        
     }
 
     /**
@@ -46,7 +44,7 @@ class TravelController extends Controller
      */
     public function create($fixture_id)
     {
-        $fixtures = Fixture::find($fixture_id)->first();
+        $fixtures = Fixture::find($fixture_id);
         //dd($fixtures);
         return view('offeraride.forms.create', compact('fixtures'));
     }
@@ -82,6 +80,7 @@ class TravelController extends Controller
 
         $create = Travel::create([
                     'user_id'           => Auth::id(),
+                    'fixture_id'        => $request->fixture_id,
                     'pickup'            => $request->pickup,
                     'dropoff'           => $request->dropoff, 
                     'travel_date'       => $travel_date,

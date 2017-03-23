@@ -24,7 +24,7 @@
 				{{ Carbon\Carbon::parse($travel->travel_date)->format('D d M - H:i') }}
 
 				<ul class="list-inline">
-			  <li><a href="{{ url('/offeraride/' . $travel->id ) }}">Edit</a></li>
+			  <li><a href="{{ url('/offeraride/' . $travel->id . '/edit') }}">Edit</a></li>
 			  <li>
                 <a href="{{ url('/offeraride/delete/' .$travel->id ) }}" onclick="event.preventDefault(); document.getElementById('delete-form').submit();">
                     Delete

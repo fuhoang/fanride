@@ -43,20 +43,7 @@ class FixtureController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-        //dd($request->fixture);
-        $user_id = Auth::id();
-        //dd($user_id);
-        $user = User::find($user_id);
-        $user->fixtures()->sync([$request->fixture]);
-        //dd($user);	
-
-
-
-        //Fixture
-
-
+    {	
         return redirect()->route('offeraride', ['fixture_id' => $request->fixture]);
     }
 

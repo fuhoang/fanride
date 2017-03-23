@@ -151,7 +151,7 @@ $(function(){
 	        success: function (returnData) {
 	        	console.log(returnData);
 	        	var html = [];
-                html.push('<option value="">Select a Team</option>');
+                html.push('<option value="">Select a Fixture</option>');
 	        	$.each(returnData, function (key, value) {
 	        		console.log(key);
 	        		console.log(value);
