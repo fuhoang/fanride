@@ -34,7 +34,7 @@ class EmailVerification extends Mailable
      */
     public function build(Request $request)
     {
-        $url = $request->fullUrl() .'/' . $this->user->email_token;
+        $url = $request->fullUrl() . '/verify/' . $this->user->email_token;
         return $this->view('emails.verification', ['email_token' => $this->user->email_token, 'url' => $url] );
     }
 }
