@@ -64,11 +64,8 @@ class TravelController extends Controller
             'pickup'            => 'required',
             'dropoff'           => 'required',
             'travel_date'       => 'required',
-
             'number_of_seats'   => 'required|integer|not_in:0',
-            'team_support'      => 'required',
-            'match_day'         => 'required',
-
+            'team_support'      => 'required'
         ]);
 
         if($request->round_trip == null){
@@ -90,12 +87,10 @@ class TravelController extends Controller
                     'number_of_seats'   => $request->number_of_seats,
                     'ride_details'      => $request->ride_details,
                     'flexibility'       => $request->flexibility,
-                    'team_support'      => $request->team_support,
-                    'match_day'         => $request->match_day
+                    'team_support'      => $request->team_support
                 ]);
-
-        echo $create;
-
+        //echo $create;
+        //dd($create);
         return redirect('/dashboard');   
     }
 

@@ -34,6 +34,11 @@ class User extends Authenticatable
         $this->save();
     }
 
+
+    public function travel(){
+        return $this->hasMany('App\Travel');
+    } 
+
     public function fixtures()
     {
         return $this->belongsToMany('App\Fixture');

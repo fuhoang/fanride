@@ -11,4 +11,9 @@ class Fixture extends Model
     {
     	return $this->belongsToMany('App\User');
     }
+
+    public function travel()
+    {
+    	return $this->belongsToMany('App\Travel');
+    }
 }

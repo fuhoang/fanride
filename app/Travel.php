@@ -33,6 +33,11 @@ class Travel extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
+    }
+
+    public function fixture()
+    {
+        return $this->belongsTo('App\Fixture', 'fixture_id');
     }
 }

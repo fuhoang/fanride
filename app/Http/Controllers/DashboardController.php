@@ -23,10 +23,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         //
-        $travels = Travel::where('user_id', Auth::id())->get();
-        //$travels = 'That email belongs to an existing referrer.';
-        //print_r($travel);
-        //dd($travel);
+        $travels = auth()->user()->travel()->with('fixture')->get();
         return view('templates.dashboard', compact('travels'));
     }
 

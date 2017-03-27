@@ -13,28 +13,43 @@
 
 
 	@foreach ($travels as $travel)
-		<p>This is travel {{ $travel->id }}</p>
-
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		    <h3 class="panel-title">{{ $travel->pickup }} -> {{ $travel->dropoff }}</h3>
 		  </div>
 		  <div class="panel-body">
-		    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-				{{ Carbon\Carbon::parse($travel->travel_date)->format('D d M - H:i') }}
+		    <ul class="list">
+			    <li>
+			    	<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+					{{ Carbon\Carbon::parse($travel->travel_date)->format('D d M - H:i') }}
+				</li>
+				<li>
+					<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+					{{ $travel->fixture->fixture }}
+				</li>
+				<li>
+					<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+					{{ $travel->fixture->kick_off_time }} 
+				</li>				
+				<li>
+					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+					{{ $travel->fixture->stadium }} 
+				</li>
+			</ul>
 
-				<ul class="list-inline">
-			  <li><a href="{{ url('/offeraride/' . $travel->id . '/edit') }}">Edit</a></li>
-			  <li>
-                <a href="{{ url('/offeraride/delete/' .$travel->id ) }}" onclick="event.preventDefault(); document.getElementById('delete-form').submit();">
-                    Delete
-                </a>
 
-                <form id="delete-form" action="{{ url('/offeraride/delete/'. $travel->id) }}" method="POST" style="display: none;">
-                	<input type="hidden" name="_method" value="DELETE">
-                    {{ csrf_field() }}
-                </form>
-              </li>
+			<ul class="list-inline">
+		  		<li><a href="{{ url('/offeraride/' . $travel->id . '/edit') }}">Edit</a></li>
+		  		<li>
+            		<a href="{{ url('/offeraride/delete/' .$travel->id ) }}" onclick="event.preventDefault(); document.getElementById('delete-form').submit();">
+               	 	Delete
+            		</a>
+
+	                <form id="delete-form" action="{{ url('/offeraride/delete/'. $travel->id) }}" method="POST" style="display: none;">
+	                	<input type="hidden" name="_method" value="DELETE">
+	                    {{ csrf_field() }}
+	                </form>
+          		</li>
 			</ul>
 		  </div>
 		</div>
