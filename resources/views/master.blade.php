@@ -28,65 +28,63 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-            <div class="container topnav">
+        <!-- HEADER START -->
+        <div class="main-navigation navbar-fixed-top">
+            <nav class="navbar navbar-default">
+                <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand topnav" href="/">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand topnav" href="/">
                         {{ config('app.name', 'FanRide') }}
-                    </a>
+                  </a>
                 </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                    @if(Auth::check())
-
-
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-                        <li><a href="{{ url('/findaride') }}">Find a ride</a></li>
-                        <li><a href="{{ url('/match') }}">Offer a ride</a></li>
-                        <li><a href="{{ url('/account/' . Auth::user()->id . '/edit') }}">Account</a></li>
-                        <li><a href="{{ url('/help') }}">Help</a></li>
-                    </ul>
-                    @endif
+                
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  @if(Auth::check())
+                  <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url('/findaride') }}">Find a ride</a></li>
+                    <li><a href="{{ url('/match') }}">Offer a ride</a></li>
+                    <li><a href="{{ url('/account/' . Auth::user()->id . '/edit') }}">Account</a></li>
+                    <li><a href="{{ url('/help') }}">Help</a></li>
+                   </ul>
+                   @endif
 
 
-                    <ul class="nav navbar-nav navbar-right">
+                  <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+
+                    <li><a href="{{ url('/findaride') }}">Find a ride</a></li>
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}<span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                     @endif
-                    </ul>
+                 </ul>
                 </div>
-                <!-- /.navbar-collapse -->
-            </div>
-        </nav>
+              </div>
+
+            </nav>
+        </div>
+        <!--HEADER END-->
+
 
         <div class="content-section">
         @yield('content')

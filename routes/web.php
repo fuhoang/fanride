@@ -40,7 +40,8 @@ Route::resource('account', 'AccountController');
 Route::resource('dashboard', 'DashboardController');
 Route::resource('findaride', 'SearchController');
 
-Route::get('/results/{fixture}', 'SearchController@show');
+Route::get('/search', 'SearchController@index');
+Route::get('/results/{fixture_id}', 'SearchController@show');
 
 //Route::resource('password', 'Auth\ForgotPasswordController');
 Route::get('/sports', 'SearchController@sports');

@@ -13,7 +13,11 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
   var bootstrapPath = 'node_modules/bootstrap-sass/assets';
-  mix.sass('app.scss')
+  mix.sass([
+      'app.scss',
+      'home.scss'
+
+    ])
   	.scripts('resources/assets/js/app.js', 'public/js')
   	.copy('node_modules/font-awesome/', 'public/fonts/font-awesome')
   	.copy('node_modules/jquery/dist/jquery.js', 'public/js')

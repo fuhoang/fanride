@@ -29,6 +29,8 @@ class SearchController extends Controller
     public function index(Request $request)
     {
         
+
+
         return view('templates.findaride');
     }
 
@@ -59,16 +61,16 @@ class SearchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($fixture)
+    public function show($fixture_id)
     {
-        echo $fixture;
-        $fixture = str_replace("-", " ", $fixture);
+        echo $fixture_id;
+        //$fixture = str_replace("-", " ", $fixture);
+        //echo $fixture;
 
-        echo $fixture;
-
-        $fixtures = Travel::where('match_day', 'LIKE', "%{$fixture}%")->get();
+        $fixtures = Travel::where('fixture_id', $fixture_id)->with('fixture')->get();
+        echo $fixtures;
         //dd($fixtures);
-        return view('templates.results', compact('fixtures'));
+        //return view('templates.results', compact('fixtures'));
     }
 
     /**

@@ -120,12 +120,11 @@ $(function(){
 	        		console.log(value.id);
 	        		console.log(value.fixture);
 
+	        		//var encodedResult = value.fixture;
+	        		//encodedResult = encodedResult.replace(/\s+/g, '-').toLowerCase();
+	        		//console.log(encodedResult);
 	        		
-	        		var encodedResult = value.fixture;
-	        		
-	        		encodedResult = encodedResult.replace(/\s+/g, '-').toLowerCase();
-	        		console.log(encodedResult);
-	        		var urlResult = 'http://fanride.local/results/' + encodedResult;
+	        		var urlResult = 'http://fanride.local/results/' + value.id;
 	        		jQuery('.fixtures-list').append('<a href="' + urlResult	 + '"  class="list-group-item">'+ value.fixture +'</a>');
 
 	        	});
